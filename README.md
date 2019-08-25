@@ -38,7 +38,7 @@ pip install contrib-extension
                 - __category__ = "board"
                 - __id__ = "upload"
 """
-import contrib-extension as Extension
+from contrib_extension import Extension
 
 class test:
     def __init__(self):
