@@ -25,6 +25,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-_version_ = "v0.0.1.1908252311-rc"
+_version_ = "v0.0.1.1909230047-rc"
 
 from ._core import Extension

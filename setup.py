@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='contrib-extension',
-      version='v0.0.1.1908252311-rc',
+      version='v0.0.1.1909230047-rc',
       url='https://github.com/Sotaneum/contrib-extension',
       license='MIT',
       author='LEE Donggun',
@@ -11,7 +11,7 @@ setup(name='contrib-extension',
       long_description=open('README.md', encoding='UTF8').read(),
       long_description_content_type='text/markdown',
       zip_safe=False,
-      setup_requires=[],
+      install_requires=[],
       classifiers=[
           'License :: OSI Approved :: MIT License'
       ]

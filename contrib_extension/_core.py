@@ -7,19 +7,17 @@ import os
 """
 
 class Extension:
-    def __init__(self, use_lib_name, identi="contrib", category="category"):
+    def __init__(self, use_lib_name:object, identi="contrib", category="category"):
         """contrib와 같은 추가 라이브러리를 관리합니다.
 
         Args:
-            use_lib_name:   사용하려는 라이브러리의 이름을 입력합니다.
-                            실제로 pip로 설치된 라이브러리이여야 가능합니다.
-                            아니면 os.path에 등록이 되어 있어야합니다.
+            use_lib_name:   사용하려는 라이브러리를 입력합니다.
             identi: 라이브러리를 보관하는 폴더 명입니다. 
                     사용하려는 라이브러리의 하위 폴더로 존재해야합니다.
             category: 카테고리를 어떤 변수명으로 식별하는지 지정합니다.
 
         """
-        self._me_ = str(use_lib_name)
+        self._me_ = use_lib_name
         self._identi_ = identi
         self._category_ = "__"+category+"__"
         self._id_ = "__id__"
@@ -34,7 +32,7 @@ class Extension:
         Args:
             folder: 폴더명을 입력합니다.
         """
-        path = os.path.dirname(os.path.abspath(__file__)).replace("\\","/")
+        path = os.path.dirname(os.path.abspath(self._me_.__file__)).replace("\\","/")
         self._base_dir_ = path+"/"+folder+"/"
 
     def __reg__(self, path, is_sub=True):
@@ -44,9 +42,9 @@ class Extension:
             path: 경로를 지정합니다.
             is_sub: 하위 카테고리인지 여부입니다.
         """
-        _path = self._me_ + "."
+        _path = os.path.dirname(os.path.abspath(self._me_.__file__)).replace("\\","/").split("/")[-1]+"."
         if is_sub:
-            _path+="contrib."
+            _path += self._identi_ + "."
         cs = importlib.import_module(_path+path)
         try:
             category = getattr(cs, self._category_)

@@ -104,6 +104,9 @@ This project was undertaken to help other projects. We'll continue to update and
 
 ## Version
 
+- v0.0.1.1909230047-rc
+  - 미작동 오류 해결(Fix Error)
+
 - v0.0.1.1908252311-rc
   - Private 프로젝트에서 분리(Detach from Private project)
   - 프로젝트 정리(Project theorem)
